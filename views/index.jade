@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .jumbotron
+    .text-center
+      h1= title
+      p Welcome to #{title}
+  form.form-horizontal(role='form', action='/signin', method='post')
+      .form-group
+          label.col-sm-2.control-label(for='inputUser') Username
+          .col-sm-10
+            input#inputEmail.form-control(type='text', placeholder='Username', name='email')
+        .form-group
+          label.col-sm-2.control-label(for='inputPassword') Password
+          .col-sm-10
+            input#inputPassword.form-control(type='password', placeholder='Password', name='password')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type='submit') Sign in
